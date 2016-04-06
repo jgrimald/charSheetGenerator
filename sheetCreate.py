@@ -1,6 +1,6 @@
 #Character Sheet Generator
 #
-#Will create a 3.5 DnD Player Character
+#Will create a 3.5 Dungeons and Dragons Player Character
 import random
 
 
