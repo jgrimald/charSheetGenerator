@@ -42,6 +42,35 @@ def statDiceRoll():
             continue
     statTotal = largest + second + third
     return statTotal
+    
+#Finds the ability modifier for your given ability score
+def modCheck(score):
+    if score == 1:
+        return "-5"
+    elif score <=3:
+        return "-4"
+    elif score <=5:
+        return "-3"
+    elif score <= 7:
+        return "-2"
+    elif score <= 9:
+        return "-1"
+    elif score <= 11:
+        return "0"
+    elif score <= 13:
+        return "+1"
+    elif score <= 15:
+        return "+2"
+    elif score <= 17:
+        return "+3"
+    elif score<= 19:
+        return "+4"
+    elif score <= 21:
+        return "+5"
+    elif score <= 23:
+        return "+6"
+    else:
+        return "You are too strong for a starting character"
 
 
 # Main function, puts everything together
@@ -57,12 +86,12 @@ def main():
     statsList = []
     for x in range(0,6):
         statsList.append(statDiceRoll())
-    print("STR: " + str(statsList[0]))
-    print("DEX: " + str(statsList[1]))
-    print("CON: " + str(statsList[2]))
-    print("INT: " + str(statsList[3]))
-    print("CHA: " + str(statsList[4]))
-    print("WIS: " + str(statsList[5]))
+    print("STR: " + str(statsList[0]) + " MOD: " + modCheck(statsList[0]))
+    print("DEX: " + str(statsList[1]) + " MOD: " + modCheck(statsList[1]))
+    print("CON: " + str(statsList[2]) + " MOD: " + modCheck(statsList[2]))
+    print("INT: " + str(statsList[3]) + " MOD: " + modCheck(statsList[3]))
+    print("CHA: " + str(statsList[4]) + " MOD: " + modCheck(statsList[4]))
+    print("WIS: " + str(statsList[5]) + " MOD: " + modCheck(statsList[5]))
 
 
 # runs the main function
