@@ -329,7 +329,31 @@ def main():
     
     finalD = racialModifier(dicOfSkill, userRace)
     
-    print (finalD)
+    
+    print(finalD)
+
+    
+
+    conMod = int(modCheck(finalD['CON']))
+    dexMod = int(modCheck(finalD['DEX']))
+    wisMod = int(modCheck(finalD['WIS']))
+    intMod = int(modCheck(finalD['INT']))
+    chaMod = int(modCheck(finalD['CHA']))
+    strMod = int(modCheck(finalD['STR']))
+    
+    modList = [conMod, dexMod, wisMod, intMod, chaMod, strMod]
+    modNameList = ['ConMod: ', 'DexMod : ', 'WisMod : ', 'IntMod :', 'ChaMod: ', 'StrMod: ',]
+    modDict = dict(zip(modNameList, modList))
+
+    print(modDict)
+    
+    
+    fortitude, reflex, willSave, baseAttack = Saves(userClass)
+    print("FORTITUDE: " + str(fortitude + conMod))
+    print("REFLEX: " + str(reflex + dexMod))
+    print("WILL: " + str(willSave + wisMod))
+    print("BASE ATTACK BONUS: " + str(baseAttack))
+    print("")
 
 # runs the main function
 if __name__ == "__main__":
